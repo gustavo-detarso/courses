@@ -1,0 +1,100 @@
+#+STARTUP: noindent
+#+begin_src plantuml :file images/hello-uml.png
+Bob -> Alice : Hello World!
+#+end_src
+
+#+begin_src plantuml :file images/exercise1.png
+@startuml
+class Artista {
+  - <<oid>> id : Number
+  - Nome : Text 
+  - Nacionalidade: Text 
+  }
+
+class Album {
+  - <<oid>> id : Number
+  - nome : Text
+  - ano: Number
+  }
+
+class Musica {
+  - <<oid>> id : Number
+  - nome : Text
+  - duracao : Number
+  }
+#+end_src
+
+#+begin_src plantuml :file images/exercise2.png
+@startuml
+class Championship {
+  - <<oid>> id : Number
+  - Ano : Number
+}
+
+class Jogador {
+  - <<oid>> id : Number
+  - Nome: Text
+  - Birthday : Date
+  - Gender : Text
+  - Altura : Number
+}
+
+class Team {
+  - <<oid>> id : Number
+  - Nome : Text
+  - Capitain : Text
+  - Estadium : Text
+}
+
+class Match {
+  - <<oid>> id : Number
+  - date : Date
+  - pontMandante : Number
+  - pontVisitante : Number
+}
+
+class Estadium {
+  - <<oid>> id : Number
+  - Nome: Text
+}
+
+class Address {
+  - <<oid>> id : Number
+  - logradouro: Text
+  - number : Number
+  - complemento : Text
+  - bairro : Text
+  - cep : Number
+}
+#+end_src
+
+#+begin_src plantuml :file images/exercise3.png
+@startuml
+class User {
+	- <<oid>> id : Number
+	- name : Text
+	- email : Text
+	- birthday : Date
+	- website : Text
+	- gender : Text
+	- tel : Number
+	- uriPhoto : Text
+}
+
+class Postagem {
+	- <<oid>> id : Number
+	- post : Text
+	- date : Date
+	- hour: Time
+}
+
+class Photo {
+	- <<oid>> id : Number
+}
+
+class Album {
+	- <<oid>> id : Number
+	- title : Text
+}
+#+end_src
+ 
