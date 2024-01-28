@@ -1,0 +1,33 @@
+#+STARTUP: noindent
+
+#+NAME: music_class_diagram
+#+BEGIN_SRC plantuml :noweb yes :file music_class_diagram
+class Artista {
+	- <<oid>> id : Integer
+	- nome : String
+	- nacionalidade : String
+} 
+
+class Album {
+	- <<oid>> id : Integer
+	- nome : String
+	- ano : Integer
+}
+
+class Musica {
+	- <<oid>> id : Integer
+	- nome : String
+	- duracao : Integer
+} 
+#+END_SRC
+
+#+NAME: music_class_diagram_relationship
+#+BEGIN_SRC plantuml :noweb yes :file music_class_diagram_relationship.eps
+<<music_class_diagram>>
+skinparam linetype ortho
+Artista "+interpretes 1..*" ----------[norank]- "+musicasInterpretadas 0..*" Musica
+Artista "+autores 1..*" ----------[norank]- "musicasComoAutor 0..*" Musica
+Album "+albuns 1..*" --- "+musicas 1..*" Musica
+Album "+albuns 0..*" --- "+participantes 1..*" Artista
+#+END_SRC
+

@@ -1,0 +1,77 @@
+#+NAME: class_diagram
+#+begin_src plantuml :file class_diagram.eps
+class Pessoa {
+	- <<oid>> id : Integer
+	- nome: String
+}
+
+class Carro {
+	- <<oid>> id : Integer
+	- modelo: String
+	- ano: Integer
+}
+
+Pessoa "1" [-> "0..*" Carro : \t\t\t\t
+#+end_src
+
+#+NAME: object_diagram
+#+begin_src plantuml :noweb yes :file object_diagram.eps
+<<class_diagram>>
+
+object p1_Pessoa {
+	id = 2031
+	nome = Greg
+}
+
+object p2_Pessoa {
+	id = 7513
+	nome = John
+}
+
+object p3_Pessoa {
+	id = 1394
+	nome = Martha
+}
+
+object p4_Pessoa {
+	id = 8015
+	nome = Chris
+}
+
+object c1_Carro {
+	id = 1001
+	modelo = Fox
+	ano = 2015
+}
+
+object c2_Carro {
+	id = 1002
+	modelo = Vanplus
+	ano = 2017
+}
+
+object c3_Carro {
+	id = 1003
+	modelo = Cross Hatch
+	ano = 2014
+}
+
+object c4_Carro {
+	id = 1004
+	modelo = Amarok
+	ano = 2012
+}
+#+end_src
+
+#+NAME: object_diagram_relationship 
+#+begin_src plantuml :noweb yes :results silent :file object_diagram_relationship.eps
+<<object_diagram>>
+
+p1_Pessoa -- c1_Carro
+
+p3_Pessoa -- c2_Carro
+
+p3_Pessoa -- c4_Carro
+
+p4_Pessoa -- c3_Carro
+#+end_src
